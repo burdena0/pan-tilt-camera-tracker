@@ -1,0 +1,568 @@
+{
+  "domain": "synthetic CAD-based camera-only simulation",
+  "camera_resolution": [
+    320,
+    192
+  ],
+  "controller_uses_ground_truth": false,
+  "model_sha256": "19c6668a3dd858d45f602d735527c1cde7f5d9111e5431d59f91bd77560c60dd",
+  "verifier_sha256": "8ee581435155538deaa0f406af8313f8df12fb62ebf24b8be5d71a7c182d0ce5",
+  "illumination_expert": {
+    "file": "night_segmentation.onnx",
+    "sha256": "49dd30c37eea81ca280da75dd06e195a4c2001ed457226820a63fc48fa467d61",
+    "enter_brightness": 50,
+    "exit_brightness": 80
+  },
+  "lighting_model": "Phong spotlight, estimated attenuation; not calibrated lux, LED wattage or sensor photon counts",
+  "shutter_model": "5 temporal samples; constant instantaneous camera velocity during exposure; matched gain and normalized Gaussian noise",
+  "cpu_inference_ms": {
+    "median": 7.943099990370683,
+    "p95": 13.505930016981438
+  },
+  "results": [
+    {
+      "case": "fixed_camera",
+      "frames": 240,
+      "mean_center_error_px": 44.39710328097273,
+      "p95_center_error_px": 63.30501526381985,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        0.0,
+        0.0
+      ],
+      "tilt_range_deg": [
+        9.917968842283603,
+        10.0
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 218,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        0.0,
+        0.6257819607161937
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "nominal",
+      "frames": 240,
+      "mean_center_error_px": 2.038062742556446,
+      "p95_center_error_px": 5.002493781056044,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -14.557865846138261,
+        14.560895059074229
+      ],
+      "tilt_range_deg": [
+        5.621038650460172,
+        14.105962427580632
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 219,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        16.039611075318977,
+        5.925853957951576
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "distractors",
+      "frames": 240,
+      "mean_center_error_px": 2.0913066831699676,
+      "p95_center_error_px": 5.002493781056044,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -14.565612615245474,
+        14.516050756524695
+      ],
+      "tilt_range_deg": [
+        5.605298501045045,
+        14.086145752446438
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 216,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        16.072664973466576,
+        5.926871947749794
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "occlusion",
+      "frames": 240,
+      "mean_center_error_px": 2.825009799639163,
+      "p95_center_error_px": 6.871399642686724,
+      "center_error_evaluation_frames": 210,
+      "pan_range_deg": [
+        -14.515474258701243,
+        14.544221659633036
+      ],
+      "tilt_range_deg": [
+        5.647525253588722,
+        14.04694639854046
+      ],
+      "visible_frames": 231,
+      "observed_locked_frames": 210,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        20.16574866429777,
+        5.925853957951576
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "capture_stall",
+      "frames": 240,
+      "mean_center_error_px": 2.9475373554474684,
+      "p95_center_error_px": 5.670745556671335,
+      "center_error_evaluation_frames": 64,
+      "pan_range_deg": [
+        0.0,
+        13.907192791294808
+      ],
+      "tilt_range_deg": [
+        7.14801120507732,
+        13.590470880777765
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 206,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": 4.25,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        16.039611075318977,
+        5.925853957951576
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": 4.55,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "corrupt_packet",
+      "frames": 240,
+      "mean_center_error_px": 3.044039845810633,
+      "p95_center_error_px": 5.715833269220904,
+      "center_error_evaluation_frames": 60,
+      "pan_range_deg": [
+        0.0,
+        13.907192791294808
+      ],
+      "tilt_range_deg": [
+        7.778541790545887,
+        13.590470880777765
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 217,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": 4.05,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        16.039611075318977,
+        5.925853957951576
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": 4.3500000000000005,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 1,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "stale_frame",
+      "frames": 240,
+      "mean_center_error_px": 3.044039845810633,
+      "p95_center_error_px": 5.715833269220904,
+      "center_error_evaluation_frames": 60,
+      "pan_range_deg": [
+        0.0,
+        13.907192791294808
+      ],
+      "tilt_range_deg": [
+        7.778541790545887,
+        13.590470880777765
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 217,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": 4.05,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        16.039611075318977,
+        5.925853957951576
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": 4.3500000000000005,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 1,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "negative",
+      "frames": 240,
+      "mean_center_error_px": null,
+      "p95_center_error_px": null,
+      "center_error_evaluation_frames": 0,
+      "pan_range_deg": [
+        0.0,
+        0.0
+      ],
+      "tilt_range_deg": [
+        9.917968842283603,
+        10.0
+      ],
+      "visible_frames": 0,
+      "observed_locked_frames": 0,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        0.0,
+        0.6257819607161937
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "blur_dim",
+      "frames": 240,
+      "mean_center_error_px": 30.460108026281166,
+      "p95_center_error_px": 87.80199965548019,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -6.2932920000000365,
+        13.394485825491866
+      ],
+      "tilt_range_deg": [
+        5.813966269070825,
+        13.442294579630842
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 52,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        22.67704776673151,
+        10.230238127498287
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "distant",
+      "frames": 240,
+      "mean_center_error_px": 2.0846907972418176,
+      "p95_center_error_px": 6.962233315430006,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -7.385877533613884,
+        7.538350729796513
+      ],
+      "tilt_range_deg": [
+        2.839699868467285,
+        10.0
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 194,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        11.838673200940804,
+        7.120853758413278
+      ],
+      "spotlight": false,
+      "exposure_ms": null,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "night_long_shutter",
+      "frames": 240,
+      "mean_center_error_px": 3.796007820316513,
+      "p95_center_error_px": 12.138041580601485,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -14.570390940858811,
+        15.935127469171475
+      ],
+      "tilt_range_deg": [
+        5.557630909354269,
+        13.985463380112355
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 220,
+      "possible_bird_handover_frames": 9,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        20.632462679606896,
+        8.74077293396366
+      ],
+      "spotlight": false,
+      "exposure_ms": 40,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "night_spotlight",
+      "frames": 240,
+      "mean_center_error_px": 3.7797250606737816,
+      "p95_center_error_px": 11.25079233114952,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -14.614353600158989,
+        14.484973899248505
+      ],
+      "tilt_range_deg": [
+        5.636335603045267,
+        13.95820147143273
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 221,
+      "possible_bird_handover_frames": 4,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        17.033743315440283,
+        10.827617841404097
+      ],
+      "spotlight": true,
+      "exposure_ms": 40,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "night_short_shutter",
+      "frames": 240,
+      "mean_center_error_px": 4.3155119170645255,
+      "p95_center_error_px": 9.190955649695532,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -15.260719859387944,
+        13.482113674225904
+      ],
+      "tilt_range_deg": [
+        5.81981590750158,
+        14.520956549790576
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 195,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        15.81888833691399,
+        8.317997311889483
+      ],
+      "spotlight": false,
+      "exposure_ms": 2,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "night_spotlight_short_shutter",
+      "frames": 240,
+      "mean_center_error_px": 3.982240366658931,
+      "p95_center_error_px": 11.074403320343997,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -14.522688442889052,
+        14.76899284641567
+      ],
+      "tilt_range_deg": [
+        5.861257645623681,
+        14.360342094274536
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 200,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        18.121112559720785,
+        12.367541532516867
+      ],
+      "spotlight": true,
+      "exposure_ms": 2,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "night_spotlight_short_shutter_negative",
+      "frames": 240,
+      "mean_center_error_px": null,
+      "p95_center_error_px": null,
+      "center_error_evaluation_frames": 0,
+      "pan_range_deg": [
+        0.0,
+        0.0
+      ],
+      "tilt_range_deg": [
+        9.917968842283603,
+        10.0
+      ],
+      "visible_frames": 0,
+      "observed_locked_frames": 0,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        0.0,
+        0.6257819607161937
+      ],
+      "spotlight": true,
+      "exposure_ms": 2,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.10345071300973198,
+        0.1432394487827058
+      ],
+      "peak_lateral_speed_mps": 0.45499999999999996,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    },
+    {
+      "case": "night_fast_spotlight_short_shutter",
+      "frames": 240,
+      "mean_center_error_px": 19.19497730796354,
+      "p95_center_error_px": 45.236451015897075,
+      "center_error_evaluation_frames": 219,
+      "pan_range_deg": [
+        -20.717941384684703,
+        17.32182649101584
+      ],
+      "tilt_range_deg": [
+        4.359607267697177,
+        15.527267906286317
+      ],
+      "visible_frames": 240,
+      "observed_locked_frames": 217,
+      "possible_bird_handover_frames": 0,
+      "first_disable_seconds": null,
+      "false_lock_without_visible_drone_frames": 0,
+      "peak_axis_speed_dps": [
+        44.97740469700245,
+        16.61645830543439
+      ],
+      "spotlight": true,
+      "exposure_ms": 2,
+      "settled_stop_seconds": null,
+      "motion_frequencies_hz": [
+        0.2864788975654116,
+        0.3819718634205488
+      ],
+      "peak_lateral_speed_mps": 1.26,
+      "protocol_rejections": 0,
+      "nonzero_commands_when_disabled": 0
+    }
+  ]
+}

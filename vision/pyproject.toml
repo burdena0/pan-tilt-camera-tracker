@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+[project]
+name = "camera-tracking-lab"
+version = "0.1.0"
+description = "camera-only neural perception, two-axis tracking and CAD-based simulation"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2,<3", "opencv-contrib-python>=4.10,<6", "onnxruntime>=1.20,<2", "scipy>=1.14,<2", "pyserial>=3.5,<4"]
+[project.optional-dependencies]
+train = ["torch>=2.6,<3", "onnx>=1.17,<2"]
+simulation = ["mujoco>=3.3,<4", "trimesh>=4.5,<6", "pillow>=11,<13", "imageio>=2.35,<3", "imageio-ffmpeg>=0.5,<1"]
+test = ["pytest>=8,<10"]
+report = ["matplotlib>=3.9,<4"]
+[project.scripts]
+camera-tracker = "camera_tracker.runtime:main"
+[tool.setuptools.packages.find]
+where = ["src"]
+[tool.pytest.ini_options]
+testpaths = ["tests"]

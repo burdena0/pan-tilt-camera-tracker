@@ -1,0 +1,46 @@
+{
+  "caches": [
+    {
+      "file": "dataset.npz",
+      "sha256": "4349ce3efd544df24f49ea2d83ec15d48846c3d366177abb3fd3deaafe408fe3",
+      "split_counts": {
+        "train": 1600,
+        "val": 200,
+        "test": 400
+      },
+      "annotation": "legacy renderer candidates"
+    },
+    {
+      "file": "dataset_ray_checked.npz",
+      "sha256": "85396f6f10c8fbf2cf12f77be2eda27a6b23f7de2496dd47ef219dfea92a2280",
+      "split_counts": {
+        "train": 1600,
+        "val": 200,
+        "test": 400
+      },
+      "annotation": "ray-checked labels or their derived proposal crops"
+    },
+    {
+      "file": "dataset_lighting.npz",
+      "sha256": "4b8fab8a1671ab23751728968c5133b5f14cbb57aaefa76ceac83ab66b0d4f08",
+      "split_counts": {
+        "train": 1600,
+        "val": 300,
+        "test": 600
+      },
+      "annotation": "ray-checked labels or their derived proposal crops"
+    },
+    {
+      "file": "proposal_crops.npz",
+      "sha256": "cf6018c8dbbc4376cf3784d79f3fa34dc08b157717e546477c59f85b1ddf7aee",
+      "split_counts": {
+        "train": 4984,
+        "val": 902,
+        "test": 1812
+      },
+      "annotation": "ray-checked labels or their derived proposal crops"
+    }
+  ],
+  "bootstrap": "the initial 20-epoch daylight checkpoint uses the legacy cached dataset; current generators use corrected ray checks",
+  "benchmark": "known development trajectories, not a blind test; early night regression used the faster trajectory now named night_fast"
+}

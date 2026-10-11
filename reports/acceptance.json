@@ -1,0 +1,20 @@
+{
+  "mean_error_reduction_percent": 95.40946910509385,
+  "checks": {
+    "nominal_mean_error_under_5px": true,
+    "nominal_p95_error_under_10px": true,
+    "pan_moves_over_20deg": true,
+    "tilt_moves_over_5deg": true,
+    "bird_only_has_no_camera_lock": true,
+    "watchdog_latches_by_4_25sec": true,
+    "corrupt_packet_rejected": true,
+    "stale_frame_rejected": true,
+    "all_disabled_commands_zero": true,
+    "night_light_and_short_shutter_improve_centering": false,
+    "night_tracking_mean_under_10px": true,
+    "night_tracking_observed_at_least_75percent": true,
+    "night_bird_only_has_no_camera_lock": true
+  },
+  "all_checks_pass": false,
+  "domain": "these gates apply only to the recorded synthetic scenarios"
+}

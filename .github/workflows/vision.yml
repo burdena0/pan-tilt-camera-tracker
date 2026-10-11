@@ -1,0 +1,18 @@
+name: camera vision checks
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      MUJOCO_GL: egl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y libegl1 libgl1-mesa-dri libgles2
+      - run: pip install -e './vision[test,simulation]'
+      - run: python tools/build_guard.py
+      - run: pytest vision/tests

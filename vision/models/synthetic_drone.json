@@ -1,0 +1,37 @@
+{
+  "sha256": "19c6668a3dd858d45f602d735527c1cde7f5d9111e5431d59f91bd77560c60dd",
+  "input_size": [
+    320,
+    192
+  ],
+  "labels": [
+    "background",
+    "drone",
+    "bird"
+  ],
+  "preprocess": "RGB float32 CHW [0,1]",
+  "domain": "daylight synthetic simulator geometry; real accuracy unverified",
+  "parameters": 23427,
+  "verifier": {
+    "file": "crop_classifier.onnx",
+    "sha256": "8ee581435155538deaa0f406af8313f8df12fb62ebf24b8be5d71a7c182d0ce5",
+    "input_size": [
+      64,
+      64
+    ],
+    "labels": [
+      "background",
+      "drone",
+      "bird"
+    ],
+    "preprocess": "RGB float32 CHW [0,1], 1.35x square crop",
+    "domain": "synthetic only; real drone accuracy unverified",
+    "parameters": 54155
+  },
+  "illumination_expert": {
+    "file": "night_segmentation.onnx",
+    "sha256": "49dd30c37eea81ca280da75dd06e195a4c2001ed457226820a63fc48fa467d61",
+    "enter_brightness": 50,
+    "exit_brightness": 80
+  }
+}

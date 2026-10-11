@@ -1,0 +1,30 @@
+name: ESP-IDF build
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v6.0.3
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate configuration
+        run: python3 tools/validate_config.py
+      - name: Build firmware
+        shell: bash
+        run: |
+          . "$IDF_PATH/export.sh"
+          idf.py set-target esp32
+          idf.py build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: esp32-camera-tracker-firmware
+          path: |
+            build/bootloader/bootloader.bin
+            build/partition_table/partition-table.bin
+            build/esp32_camera_tracker.bin
+            build/flasher_args.json
+            build/flash_args
+            build/flash_project_args

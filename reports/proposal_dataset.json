@@ -1,0 +1,26 @@
+{
+  "source_sha256": "4b8fab8a1671ab23751728968c5133b5f14cbb57aaefa76ceac83ab66b0d4f08",
+  "output_sha256": "cf6018c8dbbc4376cf3784d79f3fa34dc08b157717e546477c59f85b1ddf7aee",
+  "split_class_counts": {
+    "train": [
+      2043,
+      2200,
+      741
+    ],
+    "val": [
+      350,
+      399,
+      153
+    ],
+    "test": [
+      751,
+      789,
+      272
+    ]
+  },
+  "label_rule": "IoU >= .4 against held-out geometric object boxes; IoU <= .1 is background; ambiguous boxes excluded",
+  "preprocessing": "shared RGB percentile stretch and Gaussian smoothing",
+  "leakage": "source scene splits remain separate",
+  "segmentation_sha256": "49dd30c37eea81ca280da75dd06e195a4c2001ed457226820a63fc48fa467d61",
+  "contrast_close_kernel": 5
+}

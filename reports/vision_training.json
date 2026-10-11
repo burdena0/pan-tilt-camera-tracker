@@ -1,0 +1,394 @@
+{
+  "seed": 1729,
+  "split_seeds": {
+    "train": 20000,
+    "validation": 40000,
+    "test": 90000
+  },
+  "train_images": 1600,
+  "validation_images": 200,
+  "test_images": 400,
+  "data_source": "randomized MuJoCo-rendered synthetic drone and bird geometry",
+  "domain": "synthetic only; real drone accuracy unverified",
+  "parameters": 23427,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.15014081470557114,
+      "validation": {
+        "class_iou": {
+          "background": 0.9996724290243864,
+          "drone": 0.7755998048693955,
+          "bird": 0.5911290322580646
+        },
+        "foreground_macro_iou": 0.68336441856373,
+        "confusion_pixels": [
+          [
+            12262026,
+            2537,
+            182
+          ],
+          [
+            988,
+            17489,
+            244
+          ],
+          [
+            311,
+            1291,
+            2932
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 0.13093671658590658,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997106751809197,
+          "drone": 0.8042317956538315,
+          "bird": 0.6472479667108001
+        },
+        "foreground_macro_iou": 0.7257398811823158,
+        "confusion_pixels": [
+          [
+            12262941,
+            1478,
+            326
+          ],
+          [
+            1418,
+            16876,
+            427
+          ],
+          [
+            327,
+            785,
+            3422
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 0.12319786140500609,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997200495399813,
+          "drone": 0.8060643446901395,
+          "bird": 0.6451487458681703
+        },
+        "foreground_macro_iou": 0.7256065452791549,
+        "confusion_pixels": [
+          [
+            12263022,
+            1481,
+            242
+          ],
+          [
+            1367,
+            16987,
+            367
+          ],
+          [
+            344,
+            872,
+            3318
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 0.11965154189227233,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997123836215517,
+          "drone": 0.805233102415278,
+          "bird": 0.6431263638167031
+        },
+        "foreground_macro_iou": 0.7241797331159905,
+        "confusion_pixels": [
+          [
+            12262811,
+            1708,
+            226
+          ],
+          [
+            1237,
+            17203,
+            281
+          ],
+          [
+            357,
+            935,
+            3242
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 0.11707618626863209,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997146665238369,
+          "drone": 0.7999443387912241,
+          "bird": 0.6227678571428571
+        },
+        "foreground_macro_iou": 0.7113560979670406,
+        "confusion_pixels": [
+          [
+            12262849,
+            1759,
+            137
+          ],
+          [
+            1218,
+            17246,
+            257
+          ],
+          [
+            386,
+            1079,
+            3069
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 6,
+      "loss": 0.12064860549880498,
+      "validation": {
+        "class_iou": {
+          "background": 0.9996904461171207,
+          "drone": 0.7916195814310898,
+          "bird": 0.6191907051282052
+        },
+        "foreground_macro_iou": 0.7054051432796475,
+        "confusion_pixels": [
+          [
+            12262242,
+            2307,
+            196
+          ],
+          [
+            946,
+            17513,
+            262
+          ],
+          [
+            348,
+            1095,
+            3091
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 7,
+      "loss": 0.11268999499838743,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997211907730125,
+          "drone": 0.814336917562724,
+          "bird": 0.6587778855480116
+        },
+        "foreground_macro_iou": 0.7365574015553678,
+        "confusion_pixels": [
+          [
+            12263032,
+            1468,
+            245
+          ],
+          [
+            1305,
+            17040,
+            376
+          ],
+          [
+            402,
+            736,
+            3396
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 8,
+      "loss": 0.11190777805758946,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997295026296861,
+          "drone": 0.8078091106290672,
+          "bird": 0.6533500537441778
+        },
+        "foreground_macro_iou": 0.7305795821866226,
+        "confusion_pixels": [
+          [
+            12262975,
+            1432,
+            338
+          ],
+          [
+            1253,
+            16758,
+            710
+          ],
+          [
+            295,
+            592,
+            3647
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 9,
+      "loss": 0.10314546175189872,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997083001488746,
+          "drone": 0.8007295941632467,
+          "bird": 0.620933521923621
+        },
+        "foreground_macro_iou": 0.7108315580434339,
+        "confusion_pixels": [
+          [
+            12262455,
+            2084,
+            206
+          ],
+          [
+            952,
+            17560,
+            209
+          ],
+          [
+            336,
+            1125,
+            3073
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 10,
+      "loss": 0.10297385920117151,
+      "validation": {
+        "class_iou": {
+          "background": 0.9996915836579939,
+          "drone": 0.7981363636363636,
+          "bird": 0.6646966115051222
+        },
+        "foreground_macro_iou": 0.731416487570743,
+        "confusion_pixels": [
+          [
+            12262104,
+            2413,
+            228
+          ],
+          [
+            848,
+            17559,
+            314
+          ],
+          [
+            294,
+            866,
+            3374
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 11,
+      "loss": 0.09963182865906117,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997352903962997,
+          "drone": 0.8175830469644902,
+          "bird": 0.6678274327722964
+        },
+        "foreground_macro_iou": 0.7427052398683933,
+        "confusion_pixels": [
+          [
+            12263025,
+            1471,
+            249
+          ],
+          [
+            1205,
+            17130,
+            386
+          ],
+          [
+            322,
+            760,
+            3452
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 12,
+      "loss": 0.0956016864015985,
+      "validation": {
+        "class_iou": {
+          "background": 0.9997336583674113,
+          "drone": 0.8170178204576943,
+          "bird": 0.6719666855953057
+        },
+        "foreground_macro_iou": 0.7444922530265,
+        "confusion_pixels": [
+          [
+            12262934,
+            1518,
+            293
+          ],
+          [
+            1164,
+            17101,
+            456
+          ],
+          [
+            292,
+            692,
+            3550
+          ]
+        ]
+      }
+    }
+  ],
+  "epochs_this_run": 12,
+  "learning_rate": 0.0005,
+  "resume_weights_sha256": "b5cf50f9d6d1df0e37e16e8ff4bba426a73a79168c0070fc1f7897603574cfc2",
+  "annotation_method": "renderer candidates verified against nearest geometric ray intersections",
+  "test": {
+    "class_iou": {
+      "background": 0.999607153812247,
+      "drone": 0.7784218809139625,
+      "bird": 0.5533568172399502
+    },
+    "foreground_macro_iou": 0.6658893490769564,
+    "confusion_pixels": [
+      [
+        24519048,
+        3783,
+        616
+      ],
+      [
+        4441,
+        39076,
+        1850
+      ],
+      [
+        796,
+        1049,
+        5341
+      ]
+    ]
+  },
+  "training_seconds": 838.8569552999979
+}

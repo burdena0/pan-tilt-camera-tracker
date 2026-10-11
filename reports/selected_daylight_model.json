@@ -1,0 +1,35 @@
+{
+  "selection": "initial checkpoint retained; corrected-label adaptation improved pixel IoU but fragmented tracking proposals",
+  "parameters": 23427,
+  "train_images": 1600,
+  "validation_images": 200,
+  "test_images": 400,
+  "initial_training_epochs": 20,
+  "checkpoint_sha256": "b5cf50f9d6d1df0e37e16e8ff4bba426a73a79168c0070fc1f7897603574cfc2",
+  "test": {
+    "class_iou": {
+      "background": 0.9994882611727776,
+      "drone": 0.7162405132766811,
+      "bird": 0.44653423499577344
+    },
+    "foreground_macro_iou": 0.5813873741362273,
+    "confusion_pixels": [
+      [
+        24517538,
+        5481,
+        428
+      ],
+      [
+        5673,
+        37844,
+        1850
+      ],
+      [
+        971,
+        1989,
+        4226
+      ]
+    ]
+  },
+  "domain": "synthetic only; corrected ray-checked test masks"
+}

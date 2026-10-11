@@ -1,0 +1,198 @@
+{
+  "seed": 1729,
+  "split_seeds": {
+    "train": 20000,
+    "validation": 40000,
+    "test": 90000
+  },
+  "train_images": 1600,
+  "validation_images": 300,
+  "test_images": 600,
+  "data_source": "randomized MuJoCo-rendered synthetic drone and bird geometry",
+  "domain": "synthetic only; real drone accuracy unverified",
+  "parameters": 23427,
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 0.2701347065505697,
+      "validation": {
+        "class_iou": {
+          "background": 0.998837388187838,
+          "drone": 0.47893852187643254,
+          "bird": 0.44537102473498236
+        },
+        "foreground_macro_iou": 0.4621547733057074,
+        "confusion_pixels": [
+          [
+            18387150,
+            5742,
+            229
+          ],
+          [
+            13227,
+            18806,
+            228
+          ],
+          [
+            2204,
+            1263,
+            3151
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 2,
+      "loss": 0.24445689113727256,
+      "validation": {
+        "class_iou": {
+          "background": 0.9988352362335408,
+          "drone": 0.4860887844689007,
+          "bird": 0.47319160315550207
+        },
+        "foreground_macro_iou": 0.47964019381220135,
+        "confusion_pixels": [
+          [
+            18385726,
+            7005,
+            390
+          ],
+          [
+            12135,
+            19655,
+            471
+          ],
+          [
+            1910,
+            1169,
+            3539
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 3,
+      "loss": 0.23634693827202072,
+      "validation": {
+        "class_iou": {
+          "background": 0.9989193279657366,
+          "drone": 0.5007178469811272,
+          "bird": 0.4736990950226244
+        },
+        "foreground_macro_iou": 0.4872084710018758,
+        "confusion_pixels": [
+          [
+            18388097,
+            4839,
+            185
+          ],
+          [
+            12810,
+            19182,
+            269
+          ],
+          [
+            2059,
+            1209,
+            3350
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 4,
+      "loss": 0.2332568018516498,
+      "validation": {
+        "class_iou": {
+          "background": 0.9989361511980034,
+          "drone": 0.5148926462014246,
+          "bird": 0.46994301994301996
+        },
+        "foreground_macro_iou": 0.4924178330722223,
+        "confusion_pixels": [
+          [
+            18387169,
+            5761,
+            191
+          ],
+          [
+            11738,
+            20312,
+            211
+          ],
+          [
+            1892,
+            1427,
+            3299
+          ]
+        ]
+      }
+    },
+    {
+      "epoch": 5,
+      "loss": 0.2291081439870507,
+      "validation": {
+        "class_iou": {
+          "background": 0.9988316634051667,
+          "drone": 0.5125878734622145,
+          "bird": 0.47272215973003373
+        },
+        "foreground_macro_iou": 0.4926550165961241,
+        "confusion_pixels": [
+          [
+            18381586,
+            11316,
+            219
+          ],
+          [
+            8653,
+            23333,
+            275
+          ],
+          [
+            1313,
+            1943,
+            3362
+          ]
+        ]
+      }
+    }
+  ],
+  "epochs_this_run": 5,
+  "learning_rate": 0.0005,
+  "resume_weights_sha256": "e8dae79d3271c13d42aff43627d394d10d55d1063aaf080777d68fbf0398aa78",
+  "annotation_method": "renderer candidates verified against nearest geometric ray intersections",
+  "cached_dataset_sha256": "4b8fab8a1671ab23751728968c5133b5f14cbb57aaefa76ceac83ab66b0d4f08",
+  "lighting_curriculum": true,
+  "night_split_seeds": {
+    "train": 120000,
+    "validation": 140000,
+    "test": 190000
+  },
+  "test": {
+    "class_iou": {
+      "background": 0.9989575357121248,
+      "drone": 0.5506941141834817,
+      "bird": 0.3726998730964467
+    },
+    "foreground_macro_iou": 0.4616969936399642,
+    "confusion_pixels": [
+      [
+        36767688,
+        20784,
+        457
+      ],
+      [
+        14286,
+        48634,
+        1090
+      ],
+      [
+        2842,
+        3520,
+        4699
+      ]
+    ]
+  },
+  "training_seconds": 386.96370520000346
+}

@@ -1,0 +1,15 @@
+{
+  "sha256": "8ee581435155538deaa0f406af8313f8df12fb62ebf24b8be5d71a7c182d0ce5",
+  "input_size": [
+    64,
+    64
+  ],
+  "labels": [
+    "background",
+    "drone",
+    "bird"
+  ],
+  "preprocess": "RGB float32 CHW [0,1], 1.35x square crop",
+  "domain": "synthetic only; real drone accuracy unverified",
+  "parameters": 54155
+}
