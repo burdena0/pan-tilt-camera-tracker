@@ -1,33 +1,26 @@
-# Neural Pan/Tilt Camera Tracker
+# Pan/Tilt Camera Tracking Simulation
 
-A two-axis USB-camera tracker with trained day/night vision, ESP32 motion control and a MuJoCo simulation built from the original printable parts. The camera mounts on the tilt shaft between the uprights.
+A MuJoCo simulation of a two-axis camera tracking moving drone geometry. The camera moves with the pan/tilt assembly, and its rendered images feed trained day/night vision models and a tracking controller.
 
-## What runs where
+The project currently runs in simulation only. The models use synthetic training data; real-camera detection and physical hardware operation have not been tested.
 
-- The Windows PC reads the USB camera and runs the neural detector, bearing-coordinate kalman tracker, global multi-object assignment and image-based camera servo.
-- The ESP32 generates step pulses, enforces travel and speed limits, handles homing/manual override and checks every vision command with a CRC, session ID, sequence number and expiry time.
-- MuJoCo simulates the original printable parts, both driven joints, the mounted camera and moving drone/bird geometry. Training labels and evaluation truth are kept out of the tracking controller.
-- A spotlight follows the same pan/tilt assembly. Night processing adds contrast normalization, trained crop verification and forward/backward optical-flow proposals. Short-shutter rendering and camera-setting read-back make blur and exposure testable.
+## Simulation
 
-The models are trained on simulator images. Real-camera detection and physical hardware operation have not been verified.
+The scene uses the original printable STL geometry. The detector classifies drone, bird and background pixels, then checks candidate crops. A Kalman tracker maintains object IDs and compensates for camera rotation. The controller drives both simulated joints to center the selected target.
 
-## Files to start with
+Scenarios cover distractors, occlusion, lost frames, corrupt commands, low light and motion blur. The simulation also exercises the C command parser and watchdog through a host build. A spotlight follows the camera for the night scenarios.
 
-- `vision/src/camera_tracker/`: detector, training, camera calibration, tracking, camera control, USB capture, serial link and simulation.
-- `simulation/assets/original/`: all five original STL files, preserved with hashes and attribution.
-- `main/`: camera-only ESP-IDF firmware.
-- `reports/`: recorded training, simulator, fault-injection, videos and model-export checks.
-- `docs/SETUP.md`: installation and launch commands.
-- `docs/WIRING.md`, `docs/MECHANICAL.md` and `docs/BOM.csv`: pin map, mounting details and parts list.
+## Repository
 
-## Hardware
+- `vision/src/camera_tracker/`: rendering, detection, tracking, training and benchmarks.
+- `vision/tests/`: camera geometry, rendering, tracking, model and command-protocol tests.
+- `simulation/assets/`: original STL files and prepared simulation meshes.
+- `reports/`: recorded synthetic results, frame traces, plots and videos.
+- `main/`: ESP32 firmware source for a future physical build; hardware operation is unverified.
+- `tools/`: mesh preparation, host builds and model checks.
 
-Classic ESP32-WROOM DevKitC, two NEMA 17 motors, DRV8825 drivers at 1/16 microstepping, four NC end stops, an NC E-stop loop, joystick, TRACK switch, HOME and STOP buttons. The USB camera connects to the Windows PC, not to the ESP32.
+## Geometry
 
-Motor pulses run from a 20 kHz GPTimer ISR. The planner limits acceleration to 80 deg/s² pan and 55 deg/s² tilt, with maximum speeds of 45 and 30 deg/s. After camera/serial loss the vision session latches off, commands return to zero and the planner decelerates to a holding stop. E-stop or conflicting limit switches disable motor outputs and latch a fault.
+The print geometry comes from [Turret Mechanism by PJohnso1](https://www.thingiverse.com/thing:4259522), licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See [asset attribution](simulation/assets/ATTRIBUTION.md) for the source files and simulation modifications.
 
-## Original mechanics
-
-[Turret Mechanism by PJohnso1](https://www.thingiverse.com/thing:4259522) is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Original print geometry is included with attribution in `simulation/assets/ATTRIBUTION.md`. The author's software reference is [PAJohnson/Turret](https://github.com/PAJohnson/Turret).
-
-Simulation assembly uses the STL geometry and estimated joint/mount transforms. Printed-part geometry is exact to the downloaded files; pinion placement, camera adapter, masses, friction and motor dynamics are assumptions. Simulation success does not prove an assembled camera tracker works.
+Joint placement, the camera adapter, masses, friction and motor response are estimates.

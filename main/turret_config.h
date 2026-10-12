@@ -1,9 +1,9 @@
 #pragma once
 
 /*
- * reference electronics: esp32-devkitc/wroom-32 + two genuine drv8825
- * carriers set to 1/16 microstepping. inputs are wired as documented in
- * docs/WIRING.md. change this file if your board or mechanics differ.
+ * Reference configuration for a future ESP32-DevKitC/WROOM-32 build
+ * with two DRV8825 carriers at 1/16 microstepping. Hardware operation
+ * is unverified; adapt these values to the assembled board and mechanics.
  */
 
 /* step/direction outputs. */
