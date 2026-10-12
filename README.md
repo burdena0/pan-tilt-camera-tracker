@@ -9,7 +9,7 @@ A two-axis USB-camera tracker with trained day/night vision, ESP32 motion contro
 - MuJoCo simulates the original printable parts, both driven joints, the mounted camera and moving drone/bird geometry. Training labels and evaluation truth are kept out of the tracking controller.
 - A spotlight follows the same pan/tilt assembly. Night processing adds contrast normalization, trained crop verification and forward/backward optical-flow proposals. Short-shutter rendering and camera-setting read-back make blur and exposure testable.
 
-This uses established vision and robotics methods. It is a portfolio implementation, not a certified industrial product. The included learned model is trained on simulator images; real drone recognition and physical hardware commissioning are not yet verified.
+The models are trained on simulator images. Real-camera detection and physical hardware operation have not been verified.
 
 ## Files to start with
 
@@ -18,10 +18,7 @@ This uses established vision and robotics methods. It is a portfolio implementat
 - `main/`: camera-only ESP-IDF firmware.
 - `reports/`: recorded training, simulator, fault-injection, videos and model-export checks.
 - `docs/SETUP.md`: installation and launch commands.
-- `docs/VISION_REQUIREMENTS.md`: scope and evidence needed for completion.
-- `docs/HOW_IT_WORKS.md`: the plain-language explanation.
-- `docs/LIGHTING_AND_BLUR.md`: what helps blur/lighting and what still needs hardware measurements.
-- `docs/RESULTS.md` and `docs/MODEL_CARD.md`: all measured cases, model data and known failures.
+- `docs/WIRING.md`, `docs/MECHANICAL.md` and `docs/BOM.csv`: pin map, mounting details and parts list.
 
 ## Hardware
 

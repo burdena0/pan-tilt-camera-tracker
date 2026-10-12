@@ -1,4 +1,4 @@
-"""make the measured result summary and plots, without hiding failed cases."""
+"""Generate benchmark metrics, plots and environment metadata."""
 from pathlib import Path
 import importlib.metadata as metadata
 import json
@@ -32,22 +32,6 @@ checks={
 summary={'mean_error_reduction_percent':reduction,'checks':{k:bool(v) for k,v in checks.items()},
          'all_checks_pass':bool(all(checks.values())),'domain':'these gates apply only to the recorded synthetic scenarios'}
 (reports/'acceptance.json').write_text(json.dumps(summary,indent=2))
-lines=['# recorded simulation results','',
-       'these are synthetic scenes at 320 x 192, 20 camera frames per second, 12 seconds each. the controller receives RGB images and joint telemetry; it does not receive simulator object positions or labels.', '',
-       '| case | mean error (px) | p95 (px) | observed lock / frames | possible bird handover frames |',
-       '| --- | ---: | ---: | ---: | ---: |']
-for r in report['results']:
-    number=lambda value:'n/a' if value is None else f'{value:.2f}'
-    lines.append(f"| {r['case']} | {number(r['mean_center_error_px'])} | {number(r['p95_center_error_px'])} | {r['observed_locked_frames']}/{r['frames']} | {r['possible_bird_handover_frames']} |")
-lines.extend(['',f'daytime mean error drops {reduction:.2f}% against the fixed-camera baseline. nominal pan spans {np.ptp(nominal["pan_range_deg"]):.2f} degrees and tilt spans {np.ptp(nominal["tilt_range_deg"]):.2f} degrees.', '',
-    'centering averages include every visible, enabled evaluation frame after the first second, even when detection is missing. fault cases stop accumulating this centering metric after the session disables. observed locks can still be reported in later frames while motion is latched off.', '',
-    'possible bird handover is a geometric proximity diagnostic, not an independently measured identity metric. overlapped drone/bird images can make it ambiguous. the day and short-shutter bird-only cases have zero camera locks.', '',
-    'the lamp brightens target pixels and a separate short-shutter test preserves moving edges. the combined lamp/2 ms case does not beat the lamp-off/40 ms case on mean centering error. that performance gate fails; the failure is retained. the shorter exposure receives more noise in the matched-gain sensor approximation.', '',
-    'fast night motion reaches the 45 deg/s pan cap and has much larger error. the dim/defocus stress case also loses tracking. these are unresolved performance limits, not successful cases.', '',
-    f'CPU inference on the recorded Windows machine: median {report["cpu_inference_ms"]["median"]:.2f} ms, p95 {report["cpu_inference_ms"]["p95"]:.2f} ms. this excludes capture, rendering, motor motion and USB transport.', '',
-    'the shutter averages five temporal samples. lamp brightness is a Phong-renderer value, not calibrated lux or electrical wattage. the camera noise is normalized Gaussian noise, not a measured camera photon model. motor inertia, friction, bracket transforms and drive response are estimates. no physical fit, real-drone accuracy or live hardware result is implied.', '',
-    'raw values, frame traces, export hashes, regression runs and videos are in `reports/`. run `tools/summarize_results.py` after the benchmark to regenerate this table.'])
-(root/'docs/RESULTS.md').write_text('\n'.join(lines)+'\n')
 fig,axes=plt.subplots(3,1,figsize=(10,8),sharex=True,layout='constrained')
 for case,color in [('fixed_camera','#8b96a1'),('nominal','#168f91')]:
     t=np.array([r['time'] for r in traces[case]])

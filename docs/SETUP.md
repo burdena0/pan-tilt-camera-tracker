@@ -26,7 +26,7 @@ Install CPU PyTorch from its official wheel index, then the training extras:
 .\.venv\Scripts\python.exe -m camera_tracker.train --epochs 20
 ```
 
-That command trains a new corrected-label baseline; it overwrites the deployment pixel model. The supplied selected daylight bootstrap predates ray-label correction. See `MODEL_CARD.md` for its provenance. Cloning the included models needs no retraining. To rebuild the adaptation/crop pipeline using the supplied bootstrap checkpoints:
+That command trains a new corrected-label baseline; it overwrites the deployment pixel model. The supplied selected daylight bootstrap predates ray-label correction. Its metadata is in `reports/selected_daylight_model.json` and `reports/data_lineage.json`. Cloning the included models needs no retraining. To rebuild the adaptation/crop pipeline using the supplied bootstrap checkpoints:
 
 ```powershell
 .\.venv\Scripts\python.exe -m camera_tracker.train --epochs 12 --resume vision/models/bootstrap_synthetic.pt --learning-rate .0005
@@ -75,6 +75,6 @@ Disconnect the old trigger/servo wiring and remove the old payload. Mount and ba
 
 Replace COM5 with the actual port. Press `c` to clear a restored fault with TRACK off, `h` to home with TRACK off, `e` to enable with TRACK selected, `r` to reset target lock, space to stop and `q` to quit. Joystick movement overrides tracking. STOP cancels the session. Stale/corrupt packets or watchdog timeout require explicit re-enable. E-stop and limit conflicts invalidate home and require rehoming.
 
-See `LIGHTING_AND_BLUR.md` for the co-moving spotlight, short-shutter experiment, camera-setting read-back and optional hardware changes. The spotlight is simulated; there is no live lamp output in the firmware.
+The spotlight is simulated; there is no live lamp output in the firmware.
 
 Camera timestamps are host receipt times, not sensor exposure timestamps. USB-driver buffering and motor step loss are not measured by this implementation. Physical validation needs those measurements.
